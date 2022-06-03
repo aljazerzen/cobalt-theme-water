@@ -1,7 +1,7 @@
 source: "."
 site:
   title: "Water - Cobalt theme"
-  base_url: "https://aljazerzen.github.io/cobalt-theme-water"
+  base_url: "/cobalt-theme-water"
 pages:
   default:
     layout: default.liquid
