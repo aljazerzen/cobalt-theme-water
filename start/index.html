@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <title>Start - Cobalt water theme</title>
+    <link rel="stylesheet" href="/cobalt-theme-water/public/water.min.css">
+
+  </head>
+  <body>
+    <header>
+    <nav style="display: flex; flex-wrap: wrap; gap: 1em; align-items: end;">
+      <div>
+        <h1 style="margin: 0 0 -0.17em 0;"><a href="/cobalt-theme-water">
+          Water
+        </a></h1>
+        <p style="margin: 0">A theme for cobalt</p>
+      </div>
+      
+      <div style="flex-grow: 1"></div>
+
+      <a href="/cobalt-theme-water/start"><span>Start</span></a>
+      <a href="/cobalt-theme-water/showcase"><span>Showcase</span></a>
+      <a href="https://github.com/aljazerzen/cobalt-theme-water"><span>Repository</span></a>
+    </nav>
+    </header>
+
+    <main>
+<h2>Install Cobalt</h2>
+<p>First of all, you need Cobalt. If you have Rust toolchain installed,
+the easiest way of installing is by running:</p>
+<pre><code>cargo install cobalt-bin
+</code></pre>
+<p>If you don't have a Rust toolchain, see
+<a href="http://cobalt-org.github.io/getting-started/">Cobalt's site on how to install</a>.</p>
+<h2>Use this site as a starting point (recommended)</h2>
+<p>This is the easiest way to start. Just clone the repository and edit this site.</p>
+<pre><code>git clone https://github.com/aljazerzen/cobalt-theme-water.git
+mv cobalt-theme-water my-site
+cd my-site
+cobalt serve
+</code></pre>
+<p>These commands will clone the repo, rename it and start a local server.
+You should now be able to access your site at <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+<h2>Start a new site</h2>
+<p>Alternatively, you can copy <code>_includes</code> and <code>_layouts</code> directories to your site and that's it!</p>
+<pre><code class="language-rust">git clone https://github.com/aljazerzen/cobalt-theme-water.git
+mkdir my-site
+cp -r cobalt-theme-water/_includes cobalt-theme-water/_layouts my-site/
+cd my-site
+cobalt serve
+</code></pre>
+<blockquote>
+<p>At the time of writing, Cobalt does not yet support themes. See <a href="https://github.com/cobalt-org/cobalt.rs/issues/301">#301</a>.</p>
+</blockquote>
+<p>For more information on how to use Cobalt, visit <a href="http://cobalt-org.github.io/">http://cobalt-org.github.io/</a>.</p>
+
+    </main>
+
+    <footer>
+      <p>Theme by aljazerzen, content by Cobalt contributors</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <title>Docs::Usage - Cobalt water theme</title>
+    <link rel="stylesheet" href="/cobalt-theme-water/public/water.min.css">
+
+</head>
+
+<body>
+  <header>
+        <nav style="display: flex; flex-wrap: wrap; gap: 1em; align-items: end;">
+      <div>
+        <h1 style="margin: 0 0 -0.17em 0;"><a href="/cobalt-theme-water">
+          Water
+        </a></h1>
+        <p style="margin: 0">A theme for cobalt</p>
+      </div>
+      
+      <div style="flex-grow: 1"></div>
+
+      <a href="/cobalt-theme-water/start"><span>Start</span></a>
+      <a href="/cobalt-theme-water/showcase"><span>Showcase</span></a>
+      <a href="https://github.com/aljazerzen/cobalt-theme-water"><span>Repository</span></a>
+    </nav>
+  </header>
+  <nav style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <div>
+      <p>Basics</p>
+      <ul>
+        <li><a  href="/cobalt-theme-water/showcase/install">Install</a></li>
+        <li><a class="active"  href="/cobalt-theme-water/showcase/usage">Usage</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/directory">Directory
+            Structure</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/config">Configuration</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Content</p>
+      <ul>
+        <li><a  href="/cobalt-theme-water/showcase/pages">Pages</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/posts">Posts</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/front">Frontmatter</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/variables">Variables</a>
+        </li>
+        <li><a  href="/cobalt-theme-water/showcase/permalink">Permalink</a>
+        </li>
+        <li><a  href="/cobalt-theme-water/showcase/layouts">Layouts</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/assets">Assets</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/data">Data files</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Misc</p>
+      <ul>
+        <li><a  href="/cobalt-theme-water/showcase/faq">FAQ</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/rss">RSS</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/tools">Tools</a></li>
+        <li><a  href="/cobalt-theme-water/showcase/deployment">Deployment</a>
+        </li>
+        <li><a  href="/cobalt-theme-water/showcase/trouble">Troubleshooting</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <h2>Usage</h2>
+<h3>init</h3>
+<p>Create a site with an example pages, posts, and layouts:</p>
+<pre><code># Create site in current directory
+$ cobalt init
+# Create site in `myBlog` sub-directory
+$ cobalt init myBlog
+</code></pre>
+<h3>serve</h3>
+<p>Serve your site at <code>127.0.0.1:3000</code></p>
+<pre><code>$ cobalt serve
+# Include drafts
+$ cobalt serve --drafts
+</code></pre>
+<p>This provides live reload; it will re-generate your site as you add or change content.</p>
+<p>Use the <code>--host</code> argument to listen on a different address (ex. 0.0.0.0/INADDR_ANY);
+the default is <code>localhost</code>.  Use <code>--port</code> (or <code>-P</code>) to listen on a different TCP port
+number (default: 3000).</p>
+<h3>new</h3>
+<p>Add a new page or post to your site:</p>
+<pre><code># Creates page `cats-around-the-world.md` in the current directory
+$ cobalt new &quot;Cats Around the World&quot;
+# Creates post `cats-around-the-world.md` in the `posts` directory
+$ cobalt new &quot;Cats Around the World&quot; --file posts
+# Creates post `cats.md` in the `posts` directory
+$ cobalt new &quot;Cats Around the World&quot; --file posts/cats.md
+</code></pre>
+<p>You can modify the template used for <code>new</code> by editing the files in <a href="/docs/directory"><code>_defaults</code></a>.</p>
+<h3>publish</h3>
+<p>Once your post is ready, you can publish it:</p>
+<pre><code>$ cobalt publish posts/cats-around-the-world.md
+</code></pre>
+<p>The page will no longer be a &quot;draft&quot; and the <code>published_date</code> will be set to today. </p>
+<p>You can also publish from the <code>drafts</code> folder:</p>
+<pre><code>$ cobalt publish drafts/dogs-around-the-world.md
+</code></pre>
+<p>It will move it to <code>posts</code> folder besides changing &quot;draft&quot; status and <code>published_date</code>.</p>
+<p>For posts only: by default, the date (<code>YYYY-MM-DD-</code>) will be prepend to your posts
+filename in order to keep them in chronological order. This can be disabled by manually
+setting <code>publish_date_in_filename: false</code> in your configuration.</p>
+<h3>build</h3>
+<p>Once the states of your documents are in a position to be put online − by using
+<code>publish</code> on the documents you want to make visible, or manually setting
+<code>is_draft: false</code> − it's time to build the website:</p>
+<pre><code>$ cobalt build
+</code></pre>
+<p>All the documents not in draft state will be build into a html file ready to be serve by
+your web server.</p>
+<h3>clean</h3>
+<p>Cleans/prunes the <code>destination</code> directory.</p>
+<h3>debug</h3>
+<p>Displays site debug information.  There are subcommands that output various information,
+ex. <code>config</code>, <code>files</code>, and <code>highlight</code>.  Refer to <a href="/docs/trouble">Troubleshooting</a> for
+further details.</p>
+<h3>More</h3>
+<p>To see all the available commands, run</p>
+<pre><code>$ cobalt --help
+</code></pre>
+<p>You can then get help with those commands by running</p>
+<pre><code>$ cobalt &lt;command&gt; --help
+</code></pre>
+
+  </main>
+  <footer>
+          <p>Theme by aljazerzen, content by Cobalt contributors</p>
+  </footer>
+</body>
+
+</html>
