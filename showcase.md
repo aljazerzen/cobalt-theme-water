@@ -1,10 +1,11 @@
 ---
-title: Docs
+title: Showcase
 layout: docs.liquid
 data:
   route: ""
 ---
-## Documentation
+
+## Showcase: Cobalt documentation
 
 Welcome to the Cobalt docs! Here begins a majestic journey that will
 take us from installation to deployment, and everywhere in between.

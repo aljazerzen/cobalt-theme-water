@@ -2,6 +2,11 @@ source: "."
 site:
   title: "Water - Cobalt theme"
   base_url: "/cobalt-theme-water"
+
+syntax_highlight:
+  theme: "base16-ocean.dark"
+  enabled: false
+
 pages:
   default:
     layout: default.liquid
